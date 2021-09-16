@@ -25,7 +25,7 @@ PASSING_CHECKPOINTS=""
 for c in $INPUT_CHECKPOINTS;do
     echo ""
     echo "Validating Checkpoint: ${c}"
-    if ! great_expectations checkpoint run $c; 
+    if ! great_expectations --v3-api checkpoint run $c; 
         then
             STATUS=1
             if [[ -z "$FAILING_CHECKPOINTS" ]];
